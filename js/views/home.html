@@ -1,0 +1,23 @@
+<div id='chart-container'>
+    <div id="pieChart" data-bind="ojComponent: {
+            component: 'ojChart', 
+            type: 'pie', 
+            series: pieSeriesValue,
+            animationOnDisplay: 'auto',
+            animationOnDataChange: 'auto',
+            styleDefaults: {threeDEffect: ko.toJS(threeDValue)},
+            hoverBehavior: 'dim'
+        }"
+         style="max-width:750px;width:100%;height:600px;margin:auto;">
+    </div>
+    <!-- 2d/3d toggle button -->
+    <div id="radioButtonset2" aria-label="Choose only one setting." aria-controls="pieChart"
+         data-bind="ojComponent: {component: 'ojButtonset', checked: threeDValue, optionChange: threeDValueChange}">
+        <!-- ko foreach: threeDOptions -->
+        <label data-bind="attr: {for: id}"></label>                               
+        <input type="radio" name="threeD"
+               data-bind="value: value, attr: {id: id},
+                   ojComponent: {component: 'ojButton', label: label}"/>
+        <!-- /ko -->
+    </div>
+</div>

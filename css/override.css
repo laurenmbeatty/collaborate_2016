@@ -1,0 +1,216 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+@font-face {
+    font-family: 'AppFont';
+    src: url("fonts/App_iconfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.demo-icon-font, .demo-icon-font-24 {
+    font-family: AppFont;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+    font-weight: normal;
+    speak: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.demo-icon-font:before, .demo-icon-font-24:before {
+    display: inline-block;
+}
+
+.demo-icon-font-24 {
+    font-size: 24px;
+}
+
+/* Icons with a suffix "-16" were designed to look best at 16px. */
+.demo-bookmark-icon-16:before {
+    content: "\e606";
+}
+
+.demo-grid-icon-16:before {
+    content: "\e607";
+}
+
+.demo-list-icon-16:before {
+    content: "\e608";
+}
+
+.demo-gear-icon-16:before {
+    content: "\e609";
+}
+
+/* Icons with a suffix "-24" were designed to look best at 24px. */
+.demo-home-icon-24:before {
+    content: "\e600";
+}
+
+.demo-education-icon-24:before {
+    content: "\e601";
+}
+
+.demo-catalog-icon-24:before {
+    content: "\e602";
+}
+
+.demo-palette-icon-24:before {
+    content: "\e603";
+}
+
+.demo-library-icon-24:before {
+    content: "\e604";
+}
+
+.demo-chat-icon-24:before {
+    content: "\e605";
+}
+
+.demo-oracle-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+.demo-oracle-icon:before {
+    content: url("images/OracleJet.jpg");
+    display: inline;
+}
+/* Adds padding between logo and application name */
+html:not([dir="rtl"]) .demo-oracle-icon {
+    padding-right: 4px;
+}
+html[dir="rtl"] .demo-oracle-icon {
+    padding-left: 4px;
+}
+
+.demo-avatar-icon {
+    width:24px;
+    height:24px;
+}
+.demo-avatar-icon:before {
+    content:url("images/avatar_24px.png")
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .demo-avatar-icon:before{
+        content:url("images/avatar_24px_2x.png");
+        -webkit-transform:translate(-25%, -25%) scale(0.5);transform:translate(-25%, -25%) scale(0.5)
+    }
+}
+
+
+.oj-web-applayout-header-title {
+    font-size: 40px;
+/*    margin-bottom: 20px;*/
+    margin-top: 20px;
+}
+
+.oj-icon {
+    margin-top: 20px;
+    border: 3px solid #4d4d4d;
+}
+.oj-navigationlist-horizontal .oj-navigationlist-item.oj-selected {
+    border-color: #d14414;
+}
+
+.oj-navigationlist-horizontal .oj-navigationlist-item:hover {
+    border-color: #d14414;
+}
+
+.oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item-label {
+    color: #4d4d4d;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item.oj-hover:not(.oj-disabled) a.oj-navigationlist-item-content>.oj-navigationlist-item-label {
+    color: black;
+}
+
+.oj-navigationlist:not(.oj-navigationlist-touch) .oj-navigationlist-item.oj-focus{
+    outline: none;
+}
+
+
+.oj-navigationlist-item-element {
+    list-style-image: none;
+}
+
+#listview li span {
+    background: url('images/folder.png') no-repeat;
+    padding-left: 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #4d4d4d;
+    font-weight: bold;
+}
+
+#listview li {
+    line-height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+#listview li:first-child {
+    display: none;
+    border-top: none;
+}
+
+#chart-container {
+    margin: 10px auto;
+}
+
+#listViewContainer {
+    margin: 10px auto;
+    width: 60%;
+}
+
+/*Side Nav*/
+
+.oj-contrast-marker .oj-navigationlist-vertical .oj-navigationlist-item.oj-selected {
+    background-color: #d14414;
+    border: none;
+}
+
+.oj-navigationlist-item.oj-hover:not(.oj-selected) {
+    border: none;
+}
+
+.oj-contrast-marker .oj-navigationlist-item.oj-hover:not(.oj-selected) {
+    background-color: #d14414;
+}
+
+.oj-web-applayout-offcanvas {
+    background-color: #4d4d4d;
+}
+
+/*Off Canvas button*/
+.oj-button.oj-hover.oj-button-half-chrome .oj-button-icon {
+    color: #d14414;
+}
+
+.oj-button.oj-hover.oj-button-half-chrome {
+    border-color: #4d4d4d;
+}
+
+.oj-button.oj-hover.oj-button-half-chrome .oj-focus {
+    background-color: white;
+}
+
+.oj-button.oj-active.oj-button-half-chrome {
+    background-color: #4d4d4d;
+}
+
+/*2D/3D Button Set*/
+.oj-buttonset-multi.oj-button-full-chrome, .oj-buttonset-multi.oj-button-outlined-chrome {
+    float: right;
+    margin-right: 30px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Documents view</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="dialogWrapper">
+            <div style="display:none" id="modalDialog1" title="Modal Dialog" 
+                 data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+                <div class="oj-dialog-body">
+                    The dialog window can be moved, resized and closed with the 'x' icon.
+                    Arbitrary content can be added to the the oj-dialog-body and oj-dialog-footer sections.
+                </div>
+                <div class="oj-dialog-footer">
+                    <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'OK'}"> </button>
+                </div>
+            </div>
+            <button id="buttonOpener" data-bind="ojComponent: {component: 'ojButton', label: 'Open Modal Dialog'}"></button>
+
+        </div>
+    </body>
+</html>
