@@ -53,7 +53,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton', 'o
 //            },
 //            beforeSend: function (xhr) {
 //                xhr.setRequestHeader('Authorization',
-//                        'Basic ' + btoa('lbeatty@fishbowlsolutions.com:Fl@m1ng0'));
+//                        'Basic ' + btoa(''));
 //            },
 //            success: function (data) {
 //                console.log(data);

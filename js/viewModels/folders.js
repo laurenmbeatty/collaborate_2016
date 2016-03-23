@@ -37,7 +37,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
                             xhr.setRequestHeader('Authorization',
                             
                             //TODO put your username and password the parens like this: btoa('jsim@fishbowlsolutions.com:passwordgoeshere')
-                                    'Basic ' + btoa(''));
+                                    'Basic ' + btoa('lbeatty@fishbowlsolutions.com:Fl@m1ng0'));
                         },
                         success: function (data) {
                             var folders = JSON.parse(data);
