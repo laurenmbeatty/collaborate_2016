@@ -8,6 +8,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
 
                 this.dataSource = new oj.ArrayTableDataSource(this.allItems, {idAttribute: "id"});
 
+                var folders;
+
+                var newFolders;
+
                 var consts = {
                     //url will be personal to your own domain
                     url: "https://dcs-fishbowlsolutions.documents.us2.oraclecloud.com",
@@ -21,7 +25,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
                 //this brings back all of the folders                   
                 var requestPath = consts.url + consts.apiPath + consts.apiVersion + consts.mainFolderItems;
 
-                var subFolderPath = consts.url + consts.apiPath + consts.apiVersion + consts.subfolderItems;
+                var folderInfo = consts.url + consts.apiPath + consts.apiVersion;
 
                 var getFolders = function () {
                     $.ajax({
@@ -35,15 +39,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
                         },
                         beforeSend: function (xhr) {
                             xhr.setRequestHeader('Authorization',
-                            
-                            //TODO put your username and password the parens like this: btoa('jsim@fishbowlsolutions.com:passwordgoeshere')
-                                    'Basic ' + btoa('lbeatty@fishbowlsolutions.com:Fl@m1ng0'));
+                                    //TODO put your username and password the parens like this: btoa('jsim@fishbowlsolutions.com:passwordgoeshere')
+                                    'Basic ' + btoa(''));
                         },
                         success: function (data) {
-                            var folders = JSON.parse(data);
+                            folders = JSON.parse(data);
                             console.log(folders);
 
-                            for (var i = 0; i <= folders.items.length; i++) {
+                            for (var i = 0; i < folders.items.length; i++) {
                                 console.log(folders.items[i]);
                                 if (folders.items[i].type === "folder") {
                                     allItems.push({
@@ -53,10 +56,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
                                     });
 
                                 }
-                                console.log(allItems);
+                                console.log(allItems());
 
                             }
-
 
                         },
                         error: function (jqXHR, textStatus, errorThrown) {}
@@ -66,10 +68,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
                 getFolders();
 
                 var clickFolder = function () {
-                    alert("Got here");
+                    var clickedFolderID = allItems()[1].id;
+                    console.log("The clicked folder is: " + clickedFolderID);
                     $.ajax({
                         type: 'GET',
-                        url: requestPath,
+                        url: folderInfo + "/folders/" + clickedFolderID + "/items",
                         dataType: 'text',
                         crossDomain: true,
                         xhrFields: {
@@ -77,7 +80,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
                         },
                         beforeSend: function (xhr) {
                             xhr.setRequestHeader('Authorization', 'Basic'
-                                    + btoa('lbeatty@fishbowlsolutions.com:Fl@m1ng0'));
+                                    + btoa(''));
                         },
                         success: function (data) {
 
@@ -87,9 +90,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'promise', 'ojs/oj
 
                     });
                 };
-                
-                $(document).on("click", "#ui-id-16", function(){
-                   clickFolder(); 
+
+                $(document).on("click", "#ui-id-16", function () {
+                    clickFolder();
                 });
             };
             return BetterListModel();
