@@ -7,6 +7,46 @@
     font-style: normal;
 }
 
+
+#listViewContainer {
+    display: none;
+}
+#mainContent {
+    height: 900px;
+}
+
+.wrapper {
+    width: 400px;
+    height: 200px;
+    background-color: #f9f9f9;
+    border: 1px solid #4a4a4a;
+    border-radius: 2px;
+    margin: 40px auto;
+    box-shadow: 0 3px 3px #4b4b4b;
+}
+/*rgba(0,0,0,0.1)*/
+
+#form-container {
+    padding: 40px;
+}
+
+
+#submit {
+    height: 40px;
+    color: white;
+    background-color: #d14414;
+    background-image: none;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+    border-color: #d14414;
+    margin-top: 10px;
+}
+
+.oj-label-required-icon {
+    color: #d14414;
+}
+
 .demo-icon-font, .demo-icon-font-24 {
     font-family: AppFont;
     font-size: 16px;

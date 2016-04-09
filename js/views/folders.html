@@ -1,25 +1,50 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>Folders View</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
 
-        <div id="listViewContainer">
-            <ul id="listview" aria-label="list using observable array" 
-                data-bind="ojComponent: {
-            component: 'ojListView', 
-            data: dataSource, 
+<head>
+     <title>Folders View</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+     <div class="wrapper">
+
+          <div id="form-container" class="oj-form-layout">
+               <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+                    <div class="oj-flex">
+                         <div class="oj-flex-item">
+                              <label for="username">Username: </label>
+                         </div>
+                         <div class="oj-flex-item">
+                              <input id="username" style="background-color: white;" placeholder="enter your username" data-bind="ojComponent: {component: 'ojInputText',
+                                         required: true, value: 'lbeatty@fishbowlsolutions.com'}">
+                         </div>
+                    </div>
+                    <div class="oj-flex">
+                         <div class="oj-flex-item">
+                              <label for="password">Password: </label>
+                         </div>
+                         <div class="oj-flex-item">
+                              <input id="password" data-bind="ojComponent: {component: 'ojInputPassword', required: true}">
+                         </div>
+                    </div>
+
+                    <input id="submit" type="submit" data-bind="click: login,
+                      ojComponent: {component: 'ojButton', label: 'Submit'}" />
+               </div>
+          </div>
+     </div>
+
+
+     <div id="listViewContainer">
+          <ul id="listview" aria-label="list using observable array" data-bind="ojComponent: {
+            component: 'ojListView',
+            data: dataSource,
             selectionMode: 'multiple',
             selection: selectedItems,
-            item: 
+            item:
             {
                 renderer: function(context)
                 {
@@ -27,8 +52,9 @@ and open the template in the editor.
                 }
             }
         }">
-            </ul>
-        </div>
-        
-    </body>
+          </ul>
+     </div>
+
+</body>
+
 </html>
